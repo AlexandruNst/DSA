@@ -9,32 +9,32 @@ public class SinglyLinkedLists {
     }
 }
 
-class Node {
-    Node next;
+class SLLNode {
+    SLLNode next;
     int data;
 
-    public Node(int data) {
+    public SLLNode(int data) {
         this.data = data;
     }
 }
 
 class SinglyLinkedList {
-    Node head;
+    SLLNode head;
 
     public void append(int data) {
-        if (head != null) {
-            head = new Node(data);
+        if (head == null) {
+            head = new SLLNode(data);
             return;
         }
-        Node current = head;
+        SLLNode current = head;
         while (current.next != null) {
             current = current.next;
         }
-        current.next = new Node(data);
+        current.next = new SLLNode(data);
     }
 
     public void prepend(int data) {
-        Node newHead = new Node(data);
+        SLLNode newHead = new SLLNode(data);
         newHead.next = head;
         head = newHead;
     }
@@ -46,7 +46,7 @@ class SinglyLinkedList {
             head = head.next;
         }
 
-        Node current = head;
+        SLLNode current = head;
         while (current.next != null) {
             if (current.next.data == data) {
                 current.next = current.next.next;
