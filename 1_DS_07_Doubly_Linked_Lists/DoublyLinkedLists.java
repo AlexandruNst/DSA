@@ -23,22 +23,22 @@ public class DoublyLinkedLists {
     }
 }
 
-class Node {
+class DLLNode {
     int data;
-    Node next;
-    Node prev;
+    DLLNode next;
+    DLLNode prev;
 
-    public Node(int data) {
+    public DLLNode(int data) {
         this.data = data;
     }
 }
 
 class DoublyLinkedList {
-    Node head;
-    Node tail;
+    DLLNode head;
+    DLLNode tail;
 
     public void append(int data) {
-        Node node = new Node(data);
+        DLLNode node = new DLLNode(data);
 
         if (head == null && tail == null) {
             head = node;
@@ -51,7 +51,7 @@ class DoublyLinkedList {
     }
 
     public void prepend(int data) {
-        Node node = new Node(data);
+        DLLNode node = new DLLNode(data);
 
         if (head == null && tail == null) {
             head = node;
@@ -77,7 +77,7 @@ class DoublyLinkedList {
             return;
         }
 
-        Node current = head;
+        DLLNode current = head;
         while (current.next != null) {
             if (current.next.data == data) {
                 current.next = current.next.next;
@@ -89,7 +89,7 @@ class DoublyLinkedList {
     }
 
     public void print() {
-        Node current = head;
+        DLLNode current = head;
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;
